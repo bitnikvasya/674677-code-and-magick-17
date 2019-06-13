@@ -24,7 +24,7 @@ var wizards = [
   }
 ];
 
-var renderWizard = function (wizard) {
+var renderWizard = function () {
   var wizardElement = similarWizardTemplate.cloneNode(true);
 
   wizardElement.querySelector('.setup-similar-label').textContent = wizards[i].name;
@@ -32,7 +32,7 @@ var renderWizard = function (wizard) {
   wizardElement.querySelector('.wizard-eyes').style.fill = wizards[i].eyeColor;
 
   return wizardElement;
-}
+};
 
 var fragment = document.createDocumentFragment();
 
