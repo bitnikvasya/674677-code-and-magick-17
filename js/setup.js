@@ -12,14 +12,14 @@ var similarListElement = document.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
 
 var generateWizard = function () {
-  var randFirstName = Math.floor(Math.random() * WIZARD_FIRST_NAMES.length);
-  var randSecondName = Math.floor(Math.random() * WIZARD_SECOND_NAMES.length);
-  var randCoatColor = Math.floor(Math.random() * WIZARD_COAT_COLORS.length);
-  var randEyeColor = Math.floor(Math.random() * WIZARD_EYE_COLORS.length);
+  var getRandomElement = function (array) {
+    return Math.floor(Math.random() * array.length);
+  };
+
   var randWizard = {
-    name: WIZARD_FIRST_NAMES[randFirstName] + ' ' + WIZARD_SECOND_NAMES[randSecondName],
-    coatColor: WIZARD_COAT_COLORS[randCoatColor],
-    eyeColor: WIZARD_EYE_COLORS[randEyeColor]
+    name: getRandomElement(WIZARD_FIRST_NAMES) + ' ' + getRandomElement(WIZARD_SECOND_NAMES),
+    coatColor: getRandomElement(WIZARD_COAT_COLORS),
+    eyeColor: getRandomElement(WIZARD_EYE_COLORS)
   };
 
   return randWizard;
