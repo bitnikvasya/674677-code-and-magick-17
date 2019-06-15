@@ -13,7 +13,7 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template').c
 
 var generateWizard = function () {
   var getRandomElement = function (array) {
-    return Math.floor(Math.random() * array.length);
+    return array[Math.floor(Math.random() * array.length)];
   };
 
   var randWizard = {
