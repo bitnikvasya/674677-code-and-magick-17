@@ -5,9 +5,8 @@
   var ESC_KEYCODE = 27;
   var ENTER_KEYCODE = 13;
 
-  var setup = document.querySelector('.setup');
   var setupOpen = document.querySelector('.setup-open');
-  var setupClose = setup.querySelector('.setup-close');
+  var setupClose = window.util.setup.querySelector('.setup-close');
 
   var onPopupEscPress = function (evt) {
     if (evt.keyCode === ESC_KEYCODE) {
@@ -16,14 +15,14 @@
   };
 
   var openPopup = function () {
-    setup.classList.remove('hidden');
+    window.util.setup.classList.remove('hidden');
     document.addEventListener('keydown', onPopupEscPress);
   };
 
   var closePopup = function () {
-    setup.classList.add('hidden');
+    window.util.setup.classList.add('hidden');
     document.removeEventListener('keydown', onPopupEscPress);
-    setup.removeAttribute('style');
+    window.util.setup.removeAttribute('style');
   };
 
   setupOpen.addEventListener('click', function () {
@@ -46,7 +45,7 @@
     }
   });
 
-  var dialogHandle = setup.querySelector('.upload');
+  var dialogHandle = window.util.setup.querySelector('.upload');
 
   dialogHandle.addEventListener('mousedown', function (evt) {
     evt.preventDefault();
@@ -69,8 +68,8 @@
         y: moveEvt.clientY
       };
 
-      setup.style.top = (setup.offsetTop - shift.y) + 'px';
-      setup.style.left = (setup.offsetLeft - shift.x) + 'px';
+      window.util.setup.style.top = (window.util.setup.offsetTop - shift.y) + 'px';
+      window.util.setup.style.left = (window.util.setup.offsetLeft - shift.x) + 'px';
 
     };
 
